@@ -117,3 +117,13 @@ You may use: import numpy as np\
 You can assume that mat1 and mat2 are never empty_
 
 - File: [13-cats_got_your_tongue.py](13-cats_got_your_tongue.py)
+
+## Task 14. Saddle Up
+Write a function def np_matmul(mat1, mat2): that performs matrix multiplication:
+
+You can assume that mat1 and mat2 are numpy.ndarrays
+You are not allowed to use any loops or conditional statements
+You may use: import numpy as np
+You can assume that mat1 and mat2 are never empty
+
+- File: [14-saddle_up.py](14-saddle_up.py)
