@@ -40,3 +40,11 @@ Write a function def cat_arrays(arr1, arr2): that concatenates two arrays:\
 _You can assume that arr1 and arr2 are lists of ints/floats_\
 _You must return a new list_\
 - File: [6-howdy_partner.py](6-howdy_partner.py)
+
+## Task 7. Gettin’ Cozy
+Write a function def cat_matrices2D(mat1, mat2, axis=0): that concatenates two matrices along a specific axis:\
+_You can assume that mat1 and mat2 are 2D matrices containing ints/floats_\
+_You can assume all elements in the same dimension are of the same type/shape_\
+_You must return a new matrix_\
+_If the two matrices cannot be concatenated, return None_\
+- File: [7-gettin_cozy.py](7-gettin_cozy.py)
