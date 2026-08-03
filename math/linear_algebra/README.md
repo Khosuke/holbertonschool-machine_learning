@@ -13,3 +13,9 @@ Write a function def matrix_shape(matrix): that calculates the shape of a matrix
 _You can assume all elements in the same dimension are of the same type/shape_
 - File: [2-size_me_please.py](2-size_me_please.py)
 
+## Task 3. Flip Me Over
+Write a function def matrix_transpose(matrix): that returns the transpose of a 2D matrix, matrix:\
+_You must return a new matrix_\
+_You can assume that matrix is never empty_\
+_You can assume all elements in the same dimension are of the same type/shape_\
+- File: [3-flip_me_over.py](3-flip_me_over.py)
