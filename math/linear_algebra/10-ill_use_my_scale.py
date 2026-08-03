@@ -2,7 +2,6 @@
 """
 This module implement one function def np_shape(matrix)
 """
-import numpy as np
 
 
 def np_shape(matrix):

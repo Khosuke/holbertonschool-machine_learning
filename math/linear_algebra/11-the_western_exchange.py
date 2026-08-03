@@ -2,7 +2,6 @@
 """
 This module implements one function np_transpose(matrix)
 """
-import numpy
 
 
 def np_transpose(matrix):
