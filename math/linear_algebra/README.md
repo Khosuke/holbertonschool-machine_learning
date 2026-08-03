@@ -27,10 +27,16 @@ _You must return a new list_
 _If arr1 and arr2 are not the same shape, return None_
 - File: [4-line_up.py](4-line_up.py)
 
-## 5. Across The Planes
+## Task 5. Across The Planes
 Write a function def add_matrices2D(mat1, mat2): that adds two matrices element-wise:\
 _You can assume that mat1 and mat2 are 2D matrices containing ints/floats_\
 _You can assume all elements in the same dimension are of the same type/shape_\
 _You must return a new matrix_\
 _If mat1 and mat2 are not the same shape, return None_\
 File: [5-across_the_planes.py](5-across_the_planes.py)
+
+## Task 6. Howdy Partner
+Write a function def cat_arrays(arr1, arr2): that concatenates two arrays:\
+_You can assume that arr1 and arr2 are lists of ints/floats_\
+_You must return a new list_\
+- File: [6-howdy_partner.py](6-howdy_partner.py)
