@@ -60,3 +60,12 @@ _If the two matrices cannot be multiplied, return None_\
 ## Task 9. Let The Butcher Slice It
 We learn how to manipulate multidimensional NumPy arrays using slice notation to efficiently access rows, columns, and submatrices.
 - File [9-let_the_butcher_slice_it.py](9-let_the_butcher_slice_it.py)
+
+
+## Task 10. I’ll Use My Scale
+Write a function def np_shape(matrix): that calculates the shape of a numpy.ndarray:\
+
+_You are not allowed to use any loops or conditional statements_\
+_You are not allowed to use try/except statements_\
+_The shape should be returned as a tuple of integers_\
+- File: [10-ill_use_my_scale.py](10-ill_use_my_scale.py)
