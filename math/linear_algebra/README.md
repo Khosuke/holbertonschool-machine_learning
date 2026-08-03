@@ -19,3 +19,10 @@ _You must return a new matrix_\
 _You can assume that matrix is never empty_\
 _You can assume all elements in the same dimension are of the same type/shape_\
 - File: [3-flip_me_over.py](3-flip_me_over.py)
+
+## Task 4. Line Up
+Write a function def add_arrays(arr1, arr2): that adds two arrays element-wise:\
+_You can assume that arr1 and arr2 are lists of ints/floats_\
+_You must return a new list_
+_If arr1 and arr2 are not the same shape, return None_
+- File: [4-line_up.py](4-line_up.py)
