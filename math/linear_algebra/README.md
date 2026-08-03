@@ -56,3 +56,7 @@ _You can assume all elements in the same dimension are of the same type/shape_\
 _You must return a new matrix_\
 _If the two matrices cannot be multiplied, return None_\
 - File: [8-ridin_bareback.py](8-ridin_bareback.py)
+
+## Task 9. Let The Butcher Slice It
+We learn how to manipulate multidimensional NumPy arrays using slice notation to efficiently access rows, columns, and submatrices.
+- File [9-let_the_butcher_slice_it.py](9-let_the_butcher_slice_it.py)
