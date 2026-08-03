@@ -2,7 +2,6 @@
 """
 This module implement one function np_elementwise(mat1, mat2)
 """
-import numpy as np
 
 
 def np_elementwise(mat1, mat2):
@@ -13,7 +12,7 @@ def np_elementwise(mat1, mat2):
         mat1: first matrix used to perform operation
         mat2: second matrix used to perform operation
     """
-    return np.ndarray.__add__(mat1, mat2), \
-        np.ndarray.__sub__(mat1, mat2), \
-        np.ndarray.__mul__(mat1, mat2), \
-        np.ndarray.__truediv__(mat1, mat2)
+    return mat1.__add__(mat2), \
+        mat1.__sub__(mat2), \
+        mat1.__mul__(mat2), \
+        mat1.__truediv__(mat2)
