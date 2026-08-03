@@ -48,3 +48,11 @@ _You can assume all elements in the same dimension are of the same type/shape_\
 _You must return a new matrix_\
 _If the two matrices cannot be concatenated, return None_\
 - File: [7-gettin_cozy.py](7-gettin_cozy.py)
+
+## Task 8. Ridin’ Bareback
+Write a function def mat_mul(mat1, mat2): that performs matrix multiplication:\
+_You can assume that mat1 and mat2 are 2D matrices containing ints/floats_\
+_You can assume all elements in the same dimension are of the same type/shape_\
+_You must return a new matrix_\
+_If the two matrices cannot be multiplied, return None_\
+- File: [8-ridin_bareback.py](8-ridin_bareback.py)
