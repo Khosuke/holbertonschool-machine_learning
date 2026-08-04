@@ -15,4 +15,6 @@ def line():
 
     x = np.arange(0, 11)
     plt.plot(x, y, c='r')
+    plt.xlim(0, 10)
+
     plt.savefig("graph.png")
