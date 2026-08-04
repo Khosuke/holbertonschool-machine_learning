@@ -23,4 +23,3 @@ def scatter():
     plt.scatter(x, y, c="magenta")
 
     plt.savefig("1-graph.png")
-    
