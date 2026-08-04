@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
+"""
+This module implement one function change_scale()
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def change_scale():
+    """
+    Function to plot x->y as a line graph
+    with a change of scale
+    """
     x = np.arange(0, 28651, 5730)
     r = np.log(0.5)
     t = 5730
