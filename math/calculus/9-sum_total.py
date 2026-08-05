@@ -6,7 +6,7 @@ This module implements one function def summation_i_squared(n)
 
 def summation_i_squared(n):
     """
-    Function that calculates the sum of 
+    Function that calculates the sum of
     the first n consecutive square numbers
     Args:
         n: the stopping condition number
