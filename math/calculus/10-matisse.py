@@ -3,6 +3,7 @@
 This module implements one function def poly_derivative(poly)
 """
 
+
 def poly_derivative(poly):
     """
     function that calculates the derivative of a polynomial
