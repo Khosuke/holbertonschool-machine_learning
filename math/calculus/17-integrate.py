@@ -22,7 +22,7 @@ def poly_integral(poly, C=0):
         return None
 
     result = [
-        0 if i == 0 else poly[i - 1] / i
+        C if i == 0 else poly[i - 1] / i
         for i in range(len(poly) + 1)
     ]
 
