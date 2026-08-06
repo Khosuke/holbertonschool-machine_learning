@@ -21,6 +21,9 @@ def poly_integral(poly, C=0):
     if not isinstance(C, (int, float)) or C is None:
         return None
 
+    if poly == [0]:
+        return [C]
+
     result = [
         C if i == 0 else poly[i - 1] / i
         for i in range(len(poly) + 1)
