@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 This module implements one function def poly_integral(poly, C=0)
 """
