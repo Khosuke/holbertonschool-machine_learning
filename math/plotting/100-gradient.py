@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
+"""
+This module implements one function gradient().
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def gradient():
 
+def gradient():
+    """
+    Function that scatter plot of sampled
+    elevations on a mountain.
+    """
     np.random.seed(5)
 
     x = np.random.randn(2000) * 10
