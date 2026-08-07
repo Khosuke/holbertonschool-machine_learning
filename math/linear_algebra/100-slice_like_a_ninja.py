@@ -11,6 +11,8 @@ def np_slice(matrix, axes={}):
         matrix: the matrix to slice
         axes: the specified axes
     """
+    if not axes:
+        return matrix
 
     slices = [slice(None)] * matrix.ndim
 
