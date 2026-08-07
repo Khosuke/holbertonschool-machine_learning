@@ -93,3 +93,16 @@ plot a stacked bar graph
 ```
 
 - File: [6-bars.py](6-bars.py)
+
+
+## Task 7 Gradient
+
+Complete the following source code to create a scatter plot of sampled elevations on a mountain:
+
+- The x-axis should be labeled x coordinate (m)
+- The y-axis should be labeled y coordinate (m)
+- The title should be Mountain Elevation
+- A colorbar should be used to display elevation
+- The colorbar should be labeled elevation (m)
+
+- File: [100-gradient.py](100-gradient.py)
