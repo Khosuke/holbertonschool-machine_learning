@@ -73,7 +73,6 @@ The title of the figure should be All in One_
 
 plot a stacked bar graph
 
-```
 - fruit is a matrix representing the number of fruit various people possess
     - The columns of fruit represent the number of fruit Farrah, Fred, and Felicia have, respectively
     - The rows of fruit represent the number of apples, bananas, oranges, and peaches, respectively
@@ -90,12 +89,12 @@ plot a stacked bar graph
 - The y-axis should be labeled Quantity of Fruit
 - The y-axis should range from 0 to 80 with ticks every 10 units
 - The title should be Number of Fruit per Person
-```
-
-- File: [6-bars.py](6-bars.py)
 
 
-## Task 7 Gradient
+File: [6-bars.py](6-bars.py)
+
+
+## Advanced Task 7. Gradient
 
 Complete the following source code to create a scatter plot of sampled elevations on a mountain:
 
@@ -105,4 +104,24 @@ Complete the following source code to create a scatter plot of sampled elevation
 - A colorbar should be used to display elevation
 - The colorbar should be labeled elevation (m)
 
-- File: [100-gradient.py](100-gradient.py)
+File: [100-gradient.py](100-gradient.py)
+
+
+## Advanced Task 8. PCA
+
+Principle Component Analysis (PCA) is a vital procedure used in data science for reducing the dimensionality of data (in turn, decreasing computation cost). It is also largely used for visualizing high dimensional data in 2 or 3 dimensions. For this task, you will be visualizing the [Iris flower data set](https://en.wikipedia.org/wiki/Iris_flower_data_set) . You will need to download the file [pca.npz] to test your code. You do not need to push this dataset to github. Complete the following source code to visualize the data in 3D
+
+- The title of the plot should be PCA of Iris Dataset
+- data is a np.ndarray of shape (150, 4)
+    - 150 => the number of flowers
+    - 4 => petal length, petal width, sepal length, sepal width
+- labels is a np.ndarray of shape (150,) containing information about what species of iris each data point represents:
+    - 0 => Iris Setosa
+    - 1 => Iris Versicolor
+    - 2 => Iris Virginica
+- pca_data is a np.ndarray of shape (150, 3)
+    - The columns of pca_data represent the 3 dimensions of the reduced data, i.e., x, y, and z, respectively
+- The x, y, and z axes should be labeled U1, U2, and U3, respectively
+- The data points should be colored based on their labels using the plasma color map
+
+File: [101-pca.py](101-pca.py)
