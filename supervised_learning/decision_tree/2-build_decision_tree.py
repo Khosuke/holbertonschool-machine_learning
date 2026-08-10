@@ -60,7 +60,7 @@ class Node:
         Returns:
             The formatted string with the left-child prefix.
         """
-        lines = text.split("\n")
+        lines = text.rstrip("\n").split("\n")
         new_text = "    +--"+lines[0]+"\n"
         for x in lines[1:]:
             new_text += ("    |  "+x)+"\n"
@@ -74,7 +74,7 @@ class Node:
         Returns:
             The formatted string with the right-child prefix.
         """
-        lines = text.split("\n")
+        lines = text.rstrip("\n").split("\n")
         new_text = "    +--"+lines[0]+"\n"
         for x in lines[1:]:
             new_text += ("      "+x)+"\n"
