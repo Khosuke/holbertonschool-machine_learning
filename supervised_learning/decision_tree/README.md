@@ -51,3 +51,22 @@ Task: Update the class Node by adding the method def max_depth_below(self):.
 
 
 - File: [0-build_decision_tree.py](0-build_decision_tree.py)
+
+
+## Task 1. Number of nodes/leaves in a decision tree
+
+We now want to count the number of nodes in a decision tree, potentially excluding the root and internal nodes to count only the leaves. In order to do so, we added a method `def count_nodes(self, only_leaves=False):` in the `Decision_Tree` class:
+
+```
+def count_nodes(self, only_leaves=False) :
+    return self.root.count_nodes_below(only_leaves=only_leaves)
+```
+we added a method `def count_nodes_below(self, only_leaves=False):` in the `Leaf` class:
+
+```
+def count_nodes_below(self, only_leaves=False) :
+    return 1
+```
+Task: Update the class `Node` by adding the method `def count_nodes_below(self, only_leaves=False):`
+
+- File: [1-build_decision_tree.py](1-build_decision_tree.py)
