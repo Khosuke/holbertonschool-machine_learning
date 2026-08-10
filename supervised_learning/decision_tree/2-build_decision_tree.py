@@ -60,7 +60,7 @@ class Node:
         Returns:
             The formatted string with the left-child prefix.
         """
-        lines = text.rstrip("\n").split("\n")
+        lines = text.split("\n")
         new_text = "    +--"+lines[0]+"\n"
         for x in lines[1:]:
             new_text += ("    |  "+x)+"\n"
@@ -74,7 +74,7 @@ class Node:
         Returns:
             The formatted string with the right-child prefix.
         """
-        lines = text.rstrip("\n").split("\n")
+        lines = text.split("\n")
         new_text = "    +--"+lines[0]+"\n"
         for x in lines[1:]:
             new_text += ("      "+x)+"\n"
@@ -98,8 +98,8 @@ class Node:
                 f"-> node [feature={self.feature}, "
                 f"threshold={self.threshold}]\n"
             )
-        left = self.left_child.__str__()
-        right = self.right_child.__str__()
+        left = self.left_child.__str__().rstrip("\n")
+        right = self.right_child.__str__().rstrip("\n")
 
         text += self.left_child_add_prefix(left)
         text += self.right_child_add_prefix(right)
