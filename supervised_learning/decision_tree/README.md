@@ -105,3 +105,42 @@ def get_leaves(self) :
 ```
 
 - File [3-build_decision_tree.py](3-build_decision_tree.py)
+
+## Task 4. Towards the predict function (2) : the update_bounds method
+
+Task: Insert the following declarations in their respective classes, and update the class `Node` by completing the method `def update_bounds_below(self):`
+
+This method should recursively compute, for each node, two dictionaries stored as attributes `Node.lower` and `Node.upper`.
+
+These dictionaries should contain the bounds of the node for each feature.
+
+The lower and upper bounds represent the minimum and maximum values, respectively, observed in the data subset associated with that node.
+
+The keys in the dictionary represent the features.
+
+Add in class `Leaf`:
+```
+    def update_bounds_below(self) :
+        pass 
+```
+Add in class `Decision_Tree`:
+```
+    def update_bounds(self) :
+        self.root.update_bounds_below()
+```
+Fill in `def update_bounds_below(self):` in class Node:
+```
+    def update_bounds_below(self) :
+        if self.is_root : 
+            self.upper = { 0:np.inf }
+            self.lower = {0 : -1*np.inf }
+
+        for child in [self.left_child, self.right_child] :
+
+        # To Fill : compute and attach the lower and upper dictionaries to the children
+
+        for child in [self.left_child, self.right_child] :
+            child.update_bounds_below()
+```
+
+- File: [4-build_decision_tree.py](4-build_decision_tree.py)
