@@ -88,3 +88,20 @@ def __str__(self):
 Task: Insert the above declarations in the respective classes, and update the class `Node` by adding the method `def __str__(self)` 
 
 - File: [2-build_decision_tree.py](2-build_decision_tree.py)
+
+## Task 3. Towards the predict function (1) : the get_leaves method
+
+Task: Insert the following declarations in their respective classes, and update the class `Node` by adding the method `def get_leaves_below(self):` that returns the list of all leaves of the tree.
+
+Add in class `Leaf`:
+```
+def get_leaves_below(self) :
+    return [self]
+```
+Add in class `Decision_Tree`:
+```
+def get_leaves(self) :
+    return self.root.get_leaves_below()
+```
+
+- File [3-build_decision_tree.py](3-build_decision_tree.py)
