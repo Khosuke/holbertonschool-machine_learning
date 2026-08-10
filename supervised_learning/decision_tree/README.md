@@ -70,3 +70,21 @@ def count_nodes_below(self, only_leaves=False) :
 Task: Update the class `Node` by adding the method `def count_nodes_below(self, only_leaves=False):`
 
 - File: [1-build_decision_tree.py](1-build_decision_tree.py)
+
+## Task 2. Let's print our Tree
+
+In this task, we give you the `def __str__(self):` method for the `Decision_Tree` class :
+
+```
+def __str__(self):
+    return self.root.__str__()
+```
+and the def __str__(self) : method for the Leaf class :
+```
+def __str__(self):
+    return (f"-> leaf [value={self.value}]")
+```
+
+Task: Insert the above declarations in the respective classes, and update the class `Node` by adding the method `def __str__(self)` 
+
+- File: [2-build_decision_tree.py](2-build_decision_tree.py)
