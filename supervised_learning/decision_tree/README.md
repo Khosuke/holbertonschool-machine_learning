@@ -144,3 +144,32 @@ Fill in `def update_bounds_below(self):` in class Node:
 ```
 
 - File: [4-build_decision_tree.py](4-build_decision_tree.py)
+
+## Task 5. Towards the predict function (3): the update_indicator method
+
+Consider the indicator function for a given node, denoted as "n." This function is defined as follows:
+
+It takes a 2D NumPy array, denoted as `A`, of shape `(n_individuals, n_features)`.
+The output of the indicator function is a 1D NumPy array, of size equals to the number of individuals (`n_individuals`), containing boolean values.
+The i-th element of this output array is set to `True` if the corresponding `i`-th individual meets the conditions specified by the node "n"; otherwise, it is set to `False`.
+Task: Write a method `Node.update_indicator` that computes the indicator function from the `Node.lower` and `Node.upper` dictionaries and stores it in an attribute `Node.indicator` :
+
+Fill in `def update_indicator(self):` in class `Node`:
+```
+def update_indicator(self) :
+
+        def is_large_enough(x):
+
+                #<- fill the gap : this function returns a 1D numpy array of size 
+                #`n_individuals` so that the `i`-th element of the later is `True` 
+                # if the `i`-th individual has all its features > the lower bounds
+
+        def is_small_enough(x):
+
+                #<- fill the gap : this function returns a 1D numpy array of size 
+                #`n_individuals` so that the `i`-th element of the later is `True` 
+                # if the `i`-th individual has all its features <= the lower bounds
+
+        self.indicator = lambda x : np.all(np.array([is_large_enough(x),is_small_enough(x)]),axis=0)
+```
+- File: [5-build_decision_tree.py](5-build_decision_tree.py)
