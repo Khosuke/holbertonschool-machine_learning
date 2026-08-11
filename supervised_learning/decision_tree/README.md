@@ -173,3 +173,45 @@ def update_indicator(self) :
         self.indicator = lambda x : np.all(np.array([is_large_enough(x),is_small_enough(x)]),axis=0)
 ```
 - File: [5-build_decision_tree.py](5-build_decision_tree.py)
+
+## Task 6. The predict function
+
+
+We are now in a position to write our efficient Decision_Tree.predict function.
+
+Task: Write a method `Decision_Tree.update_predict` that computes the prediction function :
+
+Fill in `def update_predict(self):` in class `Decision_Tree`:
+```
+def update_predict(self):
+        self.update_bounds()
+        leaves = self.get_leaves()
+        for leaf in leaves:
+            leaf.update_indicator()          
+        self.predict = lambda A: #<--- To be filled
+```
+
+As part of the testing process, insert the following methods into their respective classes:
+
+add `def pred(self, x):` in class `Leaf`:
+```
+    def pred(self, x):
+        return self.value
+```
+add `def pred(self,x):` in class `Node`:
+```
+    def pred(self, x):
+        if x[self.feature]>self.threshold :
+            return self.left_child.pred(x)
+        else :
+            return self.right_child.pred(x)
+```
+add `def pred(self, x):` in class `Decision_Tree`:
+```
+    def pred(self, x):
+            return self.root.pred(x)
+```
+
+Now, to validate whether Decision_Tree.pred performs similarly to the existing Decision_Tree.predict, we are creating a generator for random trees. We will compare the behavior of Decision_Tree.predict and Decision_Tree.pred on a sample explanatory array.
+
+- File: [6-build_decision_tree.py](6-build_decision_tree.py)
