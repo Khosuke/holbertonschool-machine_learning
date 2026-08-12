@@ -215,3 +215,114 @@ add `def pred(self, x):` in class `Decision_Tree`:
 Now, to validate whether Decision_Tree.pred performs similarly to the existing Decision_Tree.predict, we are creating a generator for random trees. We will compare the behavior of Decision_Tree.predict and Decision_Tree.pred on a sample explanatory array.
 
 - File: [6-build_decision_tree.py](6-build_decision_tree.py)
+
+
+## Task 7. Training decision trees
+
+
+Now we want to make our trees trainable, so we will write a method `Decision_Tree.fit` so that, when given
+
+- a 2D numpy array `explanatory` of shape `(number of individuals, number of features)`.
+- a 1D numpy array `target` of size `number of individuals`.
+and evaluating the code below, should return a decision tree to make predictions.
+
+```
+T=Decision_Tree()
+T.fit(explanatory,target)
+```
+The `fit` function
+The code below showcases the fit function. As you can observe, we assign a value to the attribute `self.root.sub_population`. During the training, each node we build will have this attribute assigned with a 1D numpy array of booleans of size `target.size` (which is the number of individuals in the training set). The `i`-th value of this array is `True` if and only if the `i`-th individual visits the node (so for the root, all the values are `True` as you can see).
+
+To be added in the `Decision_Tree` class :
+```
+def fit(self,explanatory, target,verbose=0) :
+        if self.split_criterion == "random" : 
+                self.split_criterion = self.random_split_criterion
+        else : 
+                self.split_criterion = self.Gini_split_criterion     <--- to be defined later
+        self.explanatory = explanatory
+        self.target      = target
+        self.root.sub_population = np.ones_like(self.target,dtype='bool')
+
+        self.fit_node(self.root)     <--- to be defined later
+
+        self.update_predict()     <--- defined in the previous task
+
+        if verbose==1 :
+                print(f"""  Training finished.
+- Depth                     : { self.depth()       }
+- Number of nodes           : { self.count_nodes() }
+- Number of leaves          : { self.count_nodes(only_leaves=True) }
+- Accuracy on training data : { self.accuracy(self.explanatory,self.target)    }""")     <--- to be defined later
+```
+
+The `split` function
+The training procedure consists in iteratively choosing splits from the root on, and the procedure to choose the splits depend on the situation, so, as you can see above, our training method will depend on an attribute `Decision_Tree.split_criterion`. For now, we will use a completely random way to split our nodes :
+
+To be added in the `Decision_Tree` class :
+```
+    def np_extrema(self,arr):
+        return np.min(arr), np.max(arr)
+
+    def random_split_criterion(self,node) :
+        diff=0
+        while diff==0 :
+            feature=self.rng.integers(0,self.explanatory.shape[1])
+            feature_min,feature_max=self.np_extrema(self.explanatory[:,feature][node.sub_population])
+            diff=feature_max-feature_min
+        x=self.rng.uniform()
+        threshold= (1-x)*feature_min + x*feature_max
+        return feature,threshold
+```
+Note: As surprising as it may be, and as we will check, this randomized procedure already has an interesting predicting power.
+
+Task
+Finally, as you see, the fit method just initializes some attributes of the tree and then calls a new method `Decision_Tree`.fit_node on the root. Your task is to update the class `Decision_Tree` by adding and completing the method def fit_node(self,node) :
+
+- A node is a leaf if either it contains less than `min_pop` individuals, or its depth equals `max_depth` or all the individuals of the training set that come to this node are in the same class (i.e. have the same `target` value)
+- The value to be computed for a leaf is the most represented class among the individuals that finish their trip in this leaf.
+- At a node, the splitting criterion furnishes a feature index and a threshold. If the value of the selected feature on an individual that crosses this node is greater (strictly) than the threshold, then the individual goes in the left child, otherwise it goes in the right child.
+- No for loop on the individuals should appear in your code. Use numpy functions everywhere to get an efficient program.
+```
+def fit_node(self,node) :
+        node.feature, node.threshold = self.split_criterion(node)
+
+        left_population  =      <--- to be filled
+        right_population =      <--- to be filled
+
+        # Is left node a leaf ?
+        is_left_leaf =    <--- to be filled
+
+        if is_left_leaf :
+                node.left_child = self.get_leaf_child(node,left_population)                                                         
+        else :
+                node.left_child = self.get_node_child(node,left_population)
+                self.fit_node(node.left_child)
+
+        # Is right node a leaf ?
+        is_right_leaf =    <--- to be filled
+
+        if is_right_leaf :
+                node.right_child = self.get_leaf_child(node,right_population)
+        else :
+                node.right_child = self.get_node_child(node,right_population)
+                self.fit_node(node.right_child)    
+
+def get_leaf_child(self, node, sub_population) :        
+        value =    <-- to be filled
+        leaf_child= Leaf( value )
+        leaf_child.depth=node.depth+1
+        leaf_child.subpopulation=sub_population
+        return leaf_child
+
+def get_node_child(self, node, sub_population) :        
+        n= Node()
+        n.depth=node.depth+1
+        n.sub_population=sub_population
+        return n
+
+def accuracy(self, test_explanatory , test_target) :
+        return np.sum(np.equal(self.predict(test_explanatory), test_target))/test_target.size
+```
+
+- File: [7-build_decision_tree.py](7-build_decision_tree.py)
