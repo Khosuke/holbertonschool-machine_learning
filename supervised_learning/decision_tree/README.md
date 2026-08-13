@@ -326,3 +326,53 @@ def accuracy(self, test_explanatory , test_target) :
 ```
 
 - File: [7-build_decision_tree.py](7-build_decision_tree.py)
+
+
+## Task 8. Using Gini impurity function as a splitting criterion
+
+
+For a node $N$ containing a population $P$ that is partitioned in $k+1$ classes: $P = P_0, P_1, \cdots, P_k$, the Gini impurity of $N$ is defined as
+
+$$
+\text{Gini}(N) = 1 - \sum_{i=0}^{k} p_i^2
+$$
+
+that also can be written as:
+
+$$\text{Gini}(N)=1 - \left(\frac {|(P_0)|} {|(P)|} \right)^2 - \cdots - \left(\frac {|(P_k)|} {|(P)|} \right)^2 $$
+
+
+The idea behind this definition is that
+
+- if the population of a node is equally partitioned into many classes, the Gini impurity will be large
+- if the population of a node comes mainly from one class, the Gini impurity will be small
+
+So
+
+- if the Gini impurity of a leaf is large, we cannot be very confident in the prediction function of this node
+- if the Gini impurity of a leaf is small, we can have more confidence in the prediction function of this node
+
+Hence the idea to split a node is to choose the feature and the threshold for which the average of the Gini impurities of the corresponding children is the smallest.
+
+$$\text{Gini}_{\text{split}}(N) = \frac{\text{card}(P_{\text{left}})}{\text{card}(P)} \, \text{Gini}(P_{\text{left}}) + \frac{\text{card}(P_{\text{right}})}{\text{card}(P)} \, \text{Gini}(P_{\text{right}})$$
+
+Task: To find this value :
+
+- Update the the Decision_Tree class by adding the new methods down below.
+- Fill in the gap in the method def Gini_split_criterion_one_feature(self,node,feature) :.
+- No for or while loop allowed !
+
+## Task 9. Random forests
+
+In this task, we will create a new class Random_Forest.
+
+When training an object of this class on a dataset, it will build a large list of decision trees with random splitting criterion. Then to predict the class of an individual, it will ask each of those trees its prediction, and will choose the prediction that is the most frequent.
+
+**Pros:** this method has advantages over the use of the Gini criterion
+
+- when the training dataset is large : it can save CPU usage,
+- in terms of stability : the result of this method should be almost the same on the various training subsets of a cross-validation procedure while the Gini based decision trees can be very different for each of these training subsets.
+
+**Cons:** The Gini-based decision tree furnishes a model that has a clear, elementary interpretation. This interpretation can be used, once the decision tree, to further understand (in a human sense) the dependence between the explanatory data and the target.
+
+**Task:** write the methods for the class Random_Forest
