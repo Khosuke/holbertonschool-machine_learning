@@ -337,11 +337,11 @@ class Decision_Tree():
         self.update_predict()    # <--- defined in the previous task
 
         if verbose == 1:
-                print(f"""  Training finished.
-- Depth                     : { self.depth()       }
-- Number of nodes           : { self.count_nodes() }
-- Number of leaves          : { self.count_nodes(only_leaves=True) }
-- Accuracy on training data : { self.accuracy(self.explanatory, self.target)    }""")
+            print(f"""  Training finished.
+    - Depth                     : { self.depth()       }
+    - Number of nodes           : { self.count_nodes() }
+    - Number of leaves          : { self.count_nodes(only_leaves=True) }
+    - Accuracy on training data : { self.accuracy(self.explanatory, self.target)    }""")
 
     def np_extrema(self, arr):
         """
