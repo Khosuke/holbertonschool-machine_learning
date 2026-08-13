@@ -338,10 +338,12 @@ class Decision_Tree():
 
         if verbose == 1:
             print(f"""  Training finished.
-    - Depth                     : { self.depth()       }
-    - Number of nodes           : { self.count_nodes() }
-    - Number of leaves          : { self.count_nodes(only_leaves=True) }
-    - Accuracy on training data : { self.accuracy(self.explanatory, self.target)    }""")
+    - Depth                     : {self.depth()}
+    - Number of nodes           : {self.count_nodes()}
+    - Number of leaves          : {self.count_nodes(only_leaves=True)}
+    - Accuracy on training data : {
+                self.accuracy(self.explanatory, self.target)
+            }""")
 
     def np_extrema(self, arr):
         """
@@ -391,7 +393,9 @@ class Decision_Tree():
         is_left_leaf = (
             node.depth + 1 >= self.max_depth
             or left_population.sum() <= self.min_pop
-            or np.all(self.target[left_population] == self.target[left_population][0])
+            or np.all(
+                self.target[left_population]
+                == self.target[left_population][0])
             )
 
         if is_left_leaf:
@@ -404,7 +408,9 @@ class Decision_Tree():
         is_right_leaf = (
             node.depth + 1 >= self.max_depth
             or right_population.sum() <= self.min_pop
-            or np.all(self.target[right_population] == self.target[right_population][0])
+            or np.all(
+                self.target[right_population]
+                == self.target[right_population][0])
             )
 
         if is_right_leaf:
