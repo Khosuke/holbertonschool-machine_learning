@@ -87,6 +87,13 @@ class Isolation_Random_Tree():
         self.predict = lambda A: np.array([self.pred(x) for x in A])
 
     def np_extrema(self, arr):
+        """
+        Return the minimum and maximum values of an array.
+        Args:
+            arr: Input NumPy array.
+        Returns:
+            A tuple containing the minimum and maximum values.
+        """        
         return np.min(arr), np.max(arr)
 
     def random_split_criterion(self, node):
@@ -109,6 +116,14 @@ class Isolation_Random_Tree():
         return feature, threshold
 
     def get_leaf_child(self, node, sub_population):
+        """
+        Create a leaf child with the most common target value.
+        Args:
+            node: Parent node.
+            sub_population: Boolean mask of samples belonging to the leaf.
+        Returns:
+            The newly created leaf node.
+        """
         leaf_child = Leaf(node.depth + 1)
         leaf_child.depth = node.depth + 1
         leaf_child.subpopulation = sub_population
@@ -129,6 +144,11 @@ class Isolation_Random_Tree():
         return n
 
     def fit_node(self, node):
+        """
+        Recursively split a node and create its children.
+        Args:
+            node: Node to split.
+        """
         node.feature, node.threshold = self.random_split_criterion(node)
 
         left_population = node.sub_population & (
@@ -163,7 +183,13 @@ class Isolation_Random_Tree():
             self.fit_node(node.right_child)
 
     def fit(self, explanatory, verbose=0):
-
+        """
+        Train the decision tree using explanatory data and target values.
+        Args:
+            explanatory: Training input data.
+            target: Target values associated with the input data.
+            verbose: If 1, display training information.
+        """
         self.split_criterion = self.random_split_criterion
         self.explanatory = explanatory
         self.root.sub_population = np.ones_like(
