@@ -376,3 +376,12 @@ When training an object of this class on a dataset, it will build a large list o
 **Cons:** The Gini-based decision tree furnishes a model that has a clear, elementary interpretation. This interpretation can be used, once the decision tree, to further understand (in a human sense) the dependence between the explanatory data and the target.
 
 **Task:** write the methods for the class Random_Forest
+
+
+## Task 10. IRF 1 : isolation random trees
+
+A useful application that shares similar concepts involves utilizing random forests for detecting outliers.
+
+Here we don't have any target, just an array A of explanatory features describing a set of individuals. To identify the individuals that are the more likely to be outliers, we will train a random forest, but this time (since there isn't any class) we won't stop the splitting process when all the individuals in the node are in the same class. Instead we will rely on the max_depth attribute to stop the training. Once trained, the predict function of a random tree applied to an individual will return the depth of the leaf it falled into. Outliers are likely to finish their trip alone in a leaf that has a small depth, so, averaging these predictions on a forest, the individuals that minimize the mean depth will be our suspects.
+
+**Task:** Implement the Isolation_Random_Tree class following the above directions.
