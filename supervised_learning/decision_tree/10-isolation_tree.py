@@ -93,7 +93,7 @@ class Isolation_Random_Tree():
             arr: Input NumPy array.
         Returns:
             A tuple containing the minimum and maximum values.
-        """        
+        """
         return np.min(arr), np.max(arr)
 
     def random_split_criterion(self, node):
