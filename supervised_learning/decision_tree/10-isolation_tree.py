@@ -32,28 +32,11 @@ class Isolation_Random_Tree():
 
     def __str__(self):
         """
-        Return the string representation of the node.
-        The representation includes the node's feature and threshold,
-        followed by the formatted representations of its children.
+        Return the string representation of the decision tree.
         Returns:
-            A string representation of the node and its subtree.
+            A string representation of the tree starting from its root.
         """
-        if self.is_root:
-            text = (
-                f"root [feature={self.feature}, "
-                f"threshold={self.threshold}]\n"
-            )
-        else:
-            text = (
-                f"-> node [feature={self.feature}, "
-                f"threshold={self.threshold}]\n"
-            )
-        left = self.left_child.__str__().rstrip("\n")
-        right = self.right_child.__str__().rstrip("\n")
-
-        text += self.left_child_add_prefix(left)
-        text += self.right_child_add_prefix(right)
-        return text
+        return self.root.__str__()
 
     def depth(self):
         """
@@ -126,7 +109,7 @@ class Isolation_Random_Tree():
         return feature, threshold
 
     def get_leaf_child(self, node, sub_population):
-        leaf_child = Leaf(node.depth)
+        leaf_child = Leaf(node.depth + 1)
         leaf_child.depth = node.depth + 1
         leaf_child.subpopulation = sub_population
         return leaf_child
