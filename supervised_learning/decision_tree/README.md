@@ -362,6 +362,8 @@ Task: To find this value :
 - Fill in the gap in the method def Gini_split_criterion_one_feature(self,node,feature) :.
 - No for or while loop allowed !
 
+- File: [8-build_decision_tree.py](8-build_decision_tree.py)
+
 ## Task 9. Random forests
 
 In this task, we will create a new class Random_Forest.
@@ -377,6 +379,7 @@ When training an object of this class on a dataset, it will build a large list o
 
 **Task:** write the methods for the class Random_Forest
 
+- File: [9-random_forest.py](9-random_forest.py)
 
 ## Task 10. IRF 1 : isolation random trees
 
@@ -385,3 +388,15 @@ A useful application that shares similar concepts involves utilizing random fore
 Here we don't have any target, just an array A of explanatory features describing a set of individuals. To identify the individuals that are the more likely to be outliers, we will train a random forest, but this time (since there isn't any class) we won't stop the splitting process when all the individuals in the node are in the same class. Instead we will rely on the max_depth attribute to stop the training. Once trained, the predict function of a random tree applied to an individual will return the depth of the leaf it falled into. Outliers are likely to finish their trip alone in a leaf that has a small depth, so, averaging these predictions on a forest, the individuals that minimize the mean depth will be our suspects.
 
 **Task:** Implement the Isolation_Random_Tree class following the above directions.
+
+- File: [10-isolation_tree.py](10-isolation_tree.py)
+
+## Task 11. IRF 2 : isolation random forests
+
+implement the class Isolation_Forest following the directions. :
+
+Complete the method def suspects(self,explanatory,n_suspects):
+
+Warning: Duplicates in dataset can cause the programs below to enter infinite loops. It is therefore important to check first that there are none.
+
+- File: [11-isolation_forest.py](11-isolation_forest.py)
