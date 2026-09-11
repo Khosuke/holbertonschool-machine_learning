@@ -98,7 +98,7 @@ class Neuron:
         m = Y.shape[1]
 
         pred_dif = A - Y
-        weight_gradient = (1 / m) * np.matmul(X, pred_dif.T)
+        weight_gradient = (1 / m) * np.matmul(pred_dif, X.T)
         bias_gradient = (1 / m) * np.sum(pred_dif)
 
         self.__W = self.W - alpha * weight_gradient
