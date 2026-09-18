@@ -124,7 +124,7 @@ class NeuralNetwork:
         weight_gradient2 = (1 / m) * np.matmul(pred_dif2, A1.T)
         bias_gradient2 = (1 / m) * np.sum(pred_dif2, axis=1, keepdims=True)
 
-        pred_dif1 = np.matmul(self.W2.T, pred_dif2) * (A1 * (1 - A1)) 
+        pred_dif1 = np.matmul(self.W2.T, pred_dif2) * (A1 * (1 - A1))
 
         weight_gradient1 = (1 / m) * np.matmul(pred_dif1, X.T)
         bias_gradient1 = (1 / m) * np.sum(pred_dif1, axis=1, keepdims=True)
