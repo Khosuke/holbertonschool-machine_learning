@@ -22,6 +22,7 @@ def train_model(network, data, labels, batch_size, epochs,
             gradient descent.
         verbose: boolean that determines if output should be printed
             during training.
+        validation_data: the data to validate the model with, if not None.
         shuffle: boolean that determines whether to shuffle the batches
             every epoch. Default to False.
     Returns:
