@@ -30,7 +30,7 @@ def train_model(network, data, labels, batch_size,
             x=data,
             y=labels,
             batch_size=batch_size,
-            epochs=epochs, 
+            epochs=epochs,
             verbose=verbose,
             shuffle=shuffle
         )
