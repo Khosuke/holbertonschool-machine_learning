@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+This module implements one function def one_hot()
 """
 import tensorflow.keras as K
 
