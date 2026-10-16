@@ -29,15 +29,16 @@ def train_model(network, data, labels, batch_size, epochs,
         patience: the patience used for early stopping.
         shuffle: boolean that determines whether to shuffle the batches
             every epoch. Default to False.
-        
+
     Returns:
         the History object generated after training the model.
     """
     if early_stopping:
-        callbacks = K.callbacks.EarlyStopping(monitor='val_loss', patience=patience, mode='min')
+        callbacks = K.callbacks.EarlyStopping(monitor='val_loss',
+                                              patience=patience, mode='min')
     else:
         callbacks = None
-    
+
     history = network.fit(
             x=data,
             y=labels,
