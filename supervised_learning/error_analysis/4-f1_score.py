@@ -23,6 +23,6 @@ def f1_score(confusion):
         a numpy.ndarray of shape (classes,) containing the F1 score
         of each class.
     """
-    s = sensitivity(confusion)
-    p = precision(confusion)
-    return np.divide(np.multiply(2, np.multiply(p, s)), np.add(p, s))
+    sens = sensitivity(confusion)
+    prec = precision(confusion)
+    return np.divide(np.multiply(2, np.multiply(prec, sens)), np.add(prec, sens))
