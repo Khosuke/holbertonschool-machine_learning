@@ -43,5 +43,5 @@ def l2_reg_gradient_descent(Y, weights, cache, alpha, lambtha, L):
         tanh_derivative = 1 - (prev_output ** 2)
         l_error = (np.matmul(l_weights.T, l_error)) * tanh_derivative
 
-    weights[f"W{layer}"] = l_weights - alpha * weights_grad
-    weights[f"b{layer}"] = l_bias - alpha * bias_grad
+        weights[f"W{layer}"] = l_weights - alpha * weights_grad
+        weights[f"b{layer}"] = l_bias - alpha * bias_grad
